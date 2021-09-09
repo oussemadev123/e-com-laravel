@@ -22,7 +22,9 @@ $total = ProductController::cartItem();
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Link</a></li>
-          <li class=""><a href="#">Orders</a></li>
+          @if (Session::has('user'))
+          <li class=""><a href="/myorders">Orders</a></li>
+          @endif
         </ul>
         <form action="/search" class="navbar-form navbar-left">
           <div class="form-group">
@@ -31,7 +33,7 @@ $total = ProductController::cartItem();
           <button type="submit" class="btn btn-default">Search</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Cart({{ $total }})</a></li>
+          <li><a href="/cart_list">Cart({{ $total }})</a></li>
           @if (Session::has('user'))
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ Session::get('user')['name'] }}
@@ -42,6 +44,7 @@ $total = ProductController::cartItem();
           </li>
           @else
           <li><a href="/login">login</a></li>
+          <li><a href="/register">Register</a></li>
           @endif
         </ul>
       </div><!-- /.navbar-collapse -->

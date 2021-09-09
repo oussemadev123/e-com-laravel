@@ -56,5 +56,18 @@
     .searching-items{
         display:block;
     }
+    .cart-list-devider{
+        border-bottom:1px solid #ccc;
+        margin-bottom:20px;
+        padding-bottom: 20px;
+    }
+    hr{
+        border: none;
+    border-top: 3px double #333;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    }
 </style>
 </html>
